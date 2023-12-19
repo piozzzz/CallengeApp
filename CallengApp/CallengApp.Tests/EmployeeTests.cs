@@ -49,14 +49,14 @@ namespace CallengApp.Tests
             var employee = new Employee("piotr", "zzz");
 
             employee.AddGrades(2);
-            employee.AddGrades(3);
+            employee.AddGrades(4);
             employee.AddGrades(6);
 
             //act
             var stat = employee.GetStatistics();
 
             //asert
-            Assert.AreEqual(3.67, stat.Average);   // warunek nie sp³niony bo wartosc Average nie zaokraglona do drugiega miejsca po przecinku
+            Assert.AreEqual(4, stat.Average);   // warunek nie sp³niony bo wartosc Average nie zaokraglona do drugiega miejsca po przecinku
                                                    // nie dzi³a zaokraglenie dla stat.Average:N2 - nie wiem, moze nie mozna uzyc tutaj :N2
         }
     }
