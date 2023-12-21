@@ -2,8 +2,7 @@ namespace CallengApp.Tests
 {
     // Test majacy sprawdzic poprawne dzi³anie metody GetStatistics() z klasy Employee
     // Test ten na razie (nie zawiera rzeczy) nie sprawdza poprawnosci podanych - wprowadzonych danych - czyli walidacja danych
-    // nie dzia³ zaokraglenie po przecinku N2 - test nie przechodzi dla Average
-
+   
     public class EmployeeTests
     {
         [Test]
@@ -12,9 +11,9 @@ namespace CallengApp.Tests
             //arange
             var employee = new Employee("piotr", "zzz");
 
-            employee.AddGrades(2);
-            employee.AddGrades(3);
-            employee.AddGrades(6);
+            employee.AddGrade(2);
+            employee.AddGrade(3);
+            employee.AddGrade(6);
 
             //act
             var stat = employee.GetStatistics();
@@ -30,9 +29,9 @@ namespace CallengApp.Tests
             //arange
             var employee = new Employee("piotr", "zzz");
 
-            employee.AddGrades(2);
-            employee.AddGrades(3);
-            employee.AddGrades(6);
+            employee.AddGrade(2);
+            employee.AddGrade(3);
+            employee.AddGrade(6);
 
             //act
             var stat = employee.GetStatistics();
@@ -48,16 +47,16 @@ namespace CallengApp.Tests
             //arange
             var employee = new Employee("piotr", "zzz");
 
-            employee.AddGrades(2);
-            employee.AddGrades(3);
-            employee.AddGrades(6);
+            employee.AddGrade(2);
+            employee.AddGrade(3);
+            employee.AddGrade(6);
 
             //act
             var stat = employee.GetStatistics();
 
             //asert
-            Assert.AreEqual(Math.Round(3.67, 2), Math.Round(stat.Average, 2));   // warunek nie sp³niony bo wartosc Average nie zaokraglona do drugiega miejsca po przecinku
-                                                          // nie dzi³a zaokraglenie dla stat.Average:N2 - nie wiem, moze nie mozna uzyc tutaj :N2
+            Assert.AreEqual(Math.Round(3.67, 2), Math.Round(stat.Average, 2));   
+                                                          
         }
     }
 }

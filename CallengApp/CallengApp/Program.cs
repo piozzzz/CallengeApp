@@ -1,20 +1,33 @@
 ﻿using CallengApp;
 
+var employee = new Employee("piotr", "zzz");      // tu nastepuje utworzenie obiektu typu employee aby korzystac z pol i metod classy Employee
 
-var employee = new Employee("piotr", "zzz");                 // tu nastepuje utworzenie obiektu typu employee aby korzystac z pol i metod classy Employee
-employee.AddGrades(2);                                       // uzywamy metody dodajacej punkty
-employee.AddGrades(3);
-employee.AddGrades(6);
+//employee.AddGrade(2);                             // wywolanie metody dodajacej punkty
+//employee.AddGrade(3);
+//employee.AddGrade(6);
+//employee.AddGrade("6");
+//employee.AddGrade(22);
+//employee.AddGrade("22");
+//employee.AddGrade(666);
+//employee.AddGrade("666");
+//employee.AddGrade("piotr");
+//employee.AddGrade(9.66);
+//employee.AddGrade(9.33333333333);
+//employee.AddGrade(9.88888888888);
+employee.AddGrade('7');
 
 
+var sta = employee.GetStatistics();                         // tworzymy "zmienna sta" i do niej przypisujemy "metode" dzieki której dostaniemy sie do "zmiennych Min  Max Average"
 
-Console.WriteLine($"liczba dodanych punktow: {employee.getLiczbaGrades}");
-Console.WriteLine($"suma punktow: {employee.getSumaGrades} ");
+Console.WriteLine();
+Console.WriteLine($"Liczba dodanych punktow: {sta.CountGrads}");
+Console.WriteLine("Lista dodanych punktow:");
+employee.GetListOfGrades();
+Console.WriteLine($"**{sta.SumAddedGrades:N2}** - suma dodanych punktow");
 
-var sta = employee.GetStatistics();                         // tworzymy "zmienna stat" i do niej przypisujemy "metode" dzieki której dostaniemy sie do "zmiennych Min  Max Average"
-Console.WriteLine("");
-Console.WriteLine($"wartosc minimalna: {sta.Min}");
-Console.WriteLine($"wartosc maksymalan: {sta.Max}");
-Console.WriteLine($"wartosc srednia: {sta.Average:N2}");   // zaokroglenie wartosci do drugiego miejsca po przecinku
+Console.WriteLine();
+Console.WriteLine($"wartosc minimalna: {sta.Min:N2}");
+Console.WriteLine($"wartosc maksymalan: {sta.Max:N2}");
+Console.WriteLine($"wartosc srednia: {sta.Average:N2}");   
 
 

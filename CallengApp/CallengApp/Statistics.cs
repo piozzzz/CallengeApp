@@ -11,5 +11,9 @@
         public float Max { get; set; }
 
         public float Average { get; set; }
+
+        public float SumAddedGrades { get; set; }
+
+        public float CountGrads { get; set; }
     }
 }
