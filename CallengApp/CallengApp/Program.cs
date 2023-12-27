@@ -1,8 +1,8 @@
 ﻿using CallengApp;
 
-var employee = new Employee("piotr", "zzz");     
+var employee = new Employee("piotr", "zzz");
 
-employee.AddGrade(0);                            
+employee.AddGrade(0);
 employee.AddGrade(3);
 employee.AddGrade(-33);
 employee.AddGrade(3.6f);

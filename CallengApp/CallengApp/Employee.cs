@@ -42,33 +42,33 @@
 
         public void AddGrade(double grade)
         {
-            float valueInfloat = (float)grade;
-            this.AddGrade(valueInfloat);
+            float valueInFloat = (float)grade;
+            this.AddGrade(valueInFloat);
         }
 
         public void AddGrade(long grade)
         {
-            float valueInfloat = (long)grade;
-            this.AddGrade(valueInfloat);
+            float valueInFloat = (long)grade;
+            this.AddGrade(valueInFloat);
         }
 
         public void AddGrade(ulong grade)
         {
-            float valueInfloat = (ulong)grade;
-            this.AddGrade(valueInfloat);
+            float valueInFloat = (ulong)grade;
+            this.AddGrade(valueInFloat);
         }
 
         public void AddGrade(int grade)
         {
-            float valueInfloat = (int)grade;
-            this.AddGrade(valueInfloat);
+            float valueInFloat = (int)grade;
+            this.AddGrade(valueInFloat);
         }
 
         public void AddGrade(string grade)
         {
-            if (float.TryParse(grade, out float valueInfloat))
+            if (float.TryParse(grade, out float valueInFloat))
             {
-                this.AddGrade(valueInfloat);
+                this.AddGrade(valueInFloat);
             }
             else
             {
@@ -78,7 +78,14 @@
 
         public void AddGrade(char grade)
         {
-            Console.WriteLine($"podano nieprawidłową wartosc - znak: {grade}");
+            if (float.TryParse(grade.ToString(), out float valueInFloat))
+            {
+                this.AddGrade(valueInFloat);
+            }
+            else
+            {
+               Console.WriteLine($"podano nieprawidłową wartosc - znak: {grade}");
+            }
         }
 
         //-------------------------------------------------
