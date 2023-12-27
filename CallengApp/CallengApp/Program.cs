@@ -1,23 +1,27 @@
 ﻿using CallengApp;
 
-var employee = new Employee("piotr", "zzz");      // tu nastepuje utworzenie obiektu typu employee aby korzystac z pol i metod classy Employee
+var employee = new Employee("piotr", "zzz");     
 
-//employee.AddGrade(2);                             // wywolanie metody dodajacej punkty
-//employee.AddGrade(3);
-//employee.AddGrade(6);
-//employee.AddGrade("6");
-//employee.AddGrade(22);
-//employee.AddGrade("22");
-//employee.AddGrade(666);
-//employee.AddGrade("666");
-//employee.AddGrade("piotr");
-//employee.AddGrade(9.66);
-//employee.AddGrade(9.33333333333);
-//employee.AddGrade(9.88888888888);
+employee.AddGrade(0);                            
+employee.AddGrade(3);
+employee.AddGrade(-33);
+employee.AddGrade(3.6f);
+employee.AddGrade(3.7d);
+employee.AddGrade(3.5);
+employee.AddGrade(6);
+employee.AddGrade("6");
+employee.AddGrade(22);
+employee.AddGrade("22");
+employee.AddGrade(666);
+employee.AddGrade("666");
+employee.AddGrade("piotr");
+employee.AddGrade(9.66);
+employee.AddGrade(9.33333333333);
+employee.AddGrade(9.88888888888);
 employee.AddGrade('7');
 
 
-var sta = employee.GetStatistics();                         // tworzymy "zmienna sta" i do niej przypisujemy "metode" dzieki której dostaniemy sie do "zmiennych Min  Max Average"
+var sta = employee.GetStatistics();                    
 
 Console.WriteLine();
 Console.WriteLine($"Liczba dodanych punktow: {sta.CountGrads}");

@@ -1,8 +1,7 @@
 namespace CallengApp.Tests
 {
     // Test majacy sprawdzic poprawne dzi³anie metody GetStatistics() z klasy Employee
-    // Test ten na razie (nie zawiera rzeczy) nie sprawdza poprawnosci podanych - wprowadzonych danych - czyli walidacja danych
-   
+      
     public class EmployeeTests
     {
         [Test]

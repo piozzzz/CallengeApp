@@ -1,21 +1,15 @@
 ﻿namespace CallengApp
 {
     public class Employee
-    {   //=================================================================================================================
-        // pola
-
+    {     
         public string Name { get; private set; }
 
         public string Surname { get; private set; }
 
 
-        private List<float> grades = new List<float>();     // lista zbierajaca oceny - punkty
+        private List<float> grades = new List<float>();
 
-
-
-        //==================================================================================================================
-
-        // konstruktor  - z takimi dwoma parametrami zbuduje sie obiekt        
+                
         public Employee(string name, string surname)
         {
             this.Name = name;
@@ -23,8 +17,7 @@
             this.Surname = surname;
         }
 
-        //==================================================================================================================
-
+        
         public void GetListOfGrades()
         {                    
             foreach(var grade in grades)
@@ -32,10 +25,8 @@
                 Console.WriteLine(Math.Round(grade,2));
             }            
         }
-
-        //******************************************************************************************
-        
-        // metoda dodajaca oceny do listy grade
+                     
+        //--------------------------------------
         public void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
@@ -79,54 +70,42 @@
             {
                 this.AddGrade(valueInfloat);
             }
-            else if (char.TryParse(grade, out char result))    // nie wiem dlaczego zamiana z char `7` -> to 55
-            {
-                this.AddGrade(result);
-            }
             else
             {
                 Console.WriteLine($"podano nieprawidłową wartosc - tekst: {grade}");
             }
         }
 
-        //public void AddGrades(char grade)      - inne sposób zamiany
-        //{
-        //    string tekst = grade.ToString();
-        //    this.AddGrade(tekst);
-        //}
-
-
-        //public void AddGrade(char grade) - nie da se przekonwertowac z char na liczbe za pomoca Parse i Try.Parse
-        
-
-        // ***************************************************************************************************************
-        // metoda która dostanie sie do pliku klasy Statistics, uwaga typem jest Statistics czyli klasa Statistics 
-        public Statistics GetStatistics()
+        public void AddGrade(char grade)
         {
-            //Statistics statis = new Statistics();      - to pełene zapis
-            var statis = new Statistics();            // - to skrocony zapis -> tu nastepuje utworzenie obiektu statis typu Statistics aby korzystac z pol i metod classy Statistics
+            Console.WriteLine($"podano nieprawidłową wartosc - znak: {grade}");
+        }
 
+        //-------------------------------------------------
+        public Statistics GetStatistics()
+        {            
+            var statis = new Statistics();          
 
             statis.SumAddedGrades = this.grades.Sum();
             statis.CountGrads = this.grades.Count();
 
 
-            statis.Average = 0;               // sztuczka programisty
-            statis.Max = float.MinValue;      // sztuczka programisty
-            statis.Min = float.MaxValue;      // sztuczka programisty
+            statis.Average = 0;               
+            statis.Max = float.MinValue;      
+            statis.Min = float.MaxValue;      
 
 
-            foreach (var grade in this.grades)               // petla wyszukujaca Min, Max, Avarage
+            foreach (var grade in this.grades)               
             {
-                statis.Max = Math.Max(statis.Max, grade);    // z dwóch wartosci wybrana zostanie max. warosc
-                statis.Min = Math.Min(statis.Min, grade);    // z dwóch wartosci wybrana zostanie min. warosc
+                statis.Max = Math.Max(statis.Max, grade);    
+                statis.Min = Math.Min(statis.Min, grade);    
 
-                statis.Average += grade;                     // sztuczka zliczajaca Average - srednia
+                statis.Average += grade;                     
             }
 
-            statis.Average /= this.grades.Count;     // wyliczenie sredniej
+            statis.Average /= this.grades.Count;     
             
-            return statis;                                           // zwrócenie obiektu statis z wyliczonymi Min Max Average
+            return statis;                                          
         }
     }
 }
